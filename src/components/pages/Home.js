@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get(`${process.env.REACT_APP_API}/users`);
+    const result = await axios.get(`${process.env.REACT_APP_API_GLOBAL}/users`);
     setUser(result.data.reverse());
   };
 
