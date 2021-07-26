@@ -1,6 +1,7 @@
 {
   "name": "users",
   "version": "0.1.0",
+  "json-to-netlify": "https://www.seancdavis.com/blog/deploy-static-api-netlify/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -38,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://react-crud-json-server.netlify.app/earworms.json"
 }
