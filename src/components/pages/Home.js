@@ -10,12 +10,12 @@ const Home = () => {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:3003/users");
+    const result = await axios.get(`${process.env.REACT_APP_API_GLOBAL}/users`);
     setUser(result.data.reverse());
   };
 
   const deleteUser = async id => {
-    await axios.delete(`http://localhost:3003/users/${id}`);
+    await axios.delete(`${process.env.REACT_APP_API}/users/${id}`);
     loadUsers();
   };
 

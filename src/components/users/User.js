@@ -15,7 +15,7 @@ const User = () => {
     loadUser();
   }, []);
   const loadUser = async () => {
-    const res = await axios.get(`http://localhost:3003/users/${id}`);
+    const res = await axios.get(`${process.env.REACT_APP_API}/users/${id}`);
     setUser(res.data);
   };
   return (
