@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [users, setUser] = useState([]);
@@ -10,11 +10,11 @@ const Home = () => {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get(`${process.env.REACT_APP_API_GLOBAL}/users`);
+    const result = await axios.get(`${process.env.REACT_APP_API}/users`);
     setUser(result.data.reverse());
   };
 
-  const deleteUser = async id => {
+  const deleteUser = async (id) => {
     await axios.delete(`${process.env.REACT_APP_API}/users/${id}`);
     loadUsers();
   };

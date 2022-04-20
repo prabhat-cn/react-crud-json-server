@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+/* eslint-disable no-use-before-define */
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const User = () => {
   const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    phone: "",
-    webiste: ""
+    name: '',
+    username: '',
+    email: '',
+    phone: '',
+    webiste: '',
   });
   const { id } = useParams();
-  useEffect(() => {
-    loadUser();
-  }, []);
   const loadUser = async () => {
     const res = await axios.get(`${process.env.REACT_APP_API}/users/${id}`);
     setUser(res.data);
   };
+
+  useEffect(() => {
+    loadUser();
+  }, [loadUser]);
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">

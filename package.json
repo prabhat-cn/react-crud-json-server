@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "json-server": "json-server --watch db.json --port 3003",
-    "start:dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "on": "concurrently \"npm start\" \"npm run json-server\"",
     "local-build": "react-scripts build",
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://react-crud-json-server.netlify.app/earworms.json"
+  "proxy": ""
 }
